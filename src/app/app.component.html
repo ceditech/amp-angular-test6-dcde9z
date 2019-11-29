@@ -1,0 +1,40 @@
+<header class="master-head">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">{{title}}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <button class="btn btn-danger mb-2 mr-2" (click)="openDocUploadModal(content)">Upload
+                    Documents</button>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="row">
+    <div class="col-sm-12">
+        <app-doc-table-view></app-doc-table-view>
+        <app-doc-tree-view></app-doc-tree-view>
+    </div>
+</div>
+<div class="">
+    <!-- Document Upload Modal -->
+    <ng-template #content let-modal>
+        <div class="modal-header">
+            <h3 class="modal-title">Documents Upload View</h3>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!--Document uploads router-->
+            <router-outlet></router-outlet>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-dark" (click)="modal.close('Close click')">Close</button>
+            <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Done</button>
+        </div>
+    </ng-template>
+</div>

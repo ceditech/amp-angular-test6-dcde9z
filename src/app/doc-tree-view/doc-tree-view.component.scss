@@ -1,0 +1,13 @@
+mat-tree{
+    margin: 25px 0 25px 0;
+    height: 100px;
+    overflow: auto;
+    background: #0b3831;
+    mat-icon {
+        color: #00d1b2
+    }
+    mat-tree-node:hover{
+        background-color: #1e7b6d;
+        cursor: pointer;
+    }
+}
